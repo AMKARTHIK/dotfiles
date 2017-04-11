@@ -90,5 +90,12 @@ alias r7='./openerp-server -c openerp-server.ln --workers=0'
 alias jod='cd /opt/odoo/10.0-JOD/10.0'
 alias lpth='evince ~/Desktop/Karthik/karthik/pdf/42\ PYTHON\ BOOKS\ +\ EXAMPLES/BOOKS/LPTHW.pdf &'
 alias dot='cd /home/harmony/Desktop/Karthik/karthik/dotfiles/'
+alias st='python ~/Desktop/Karthik/karthik/DO-MY-STUFF/start-apps.py'
 
-. ~/.bash_prompt
+
+bind 'set show-all-if-ambiguous on'
+bind 'TAB:menu-complete'
+#. ~/.bash_prompt
+export TERM="xterm-256color"
+# Powerline
+. /usr/local/lib/python2.7/dist-packages/powerline/bindings/bash/powerline.sh
