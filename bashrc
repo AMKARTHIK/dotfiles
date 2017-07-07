@@ -91,6 +91,11 @@ alias jod='cd /opt/odoo/10.0-JOD/10.0'
 alias lpth='evince ~/Desktop/Karthik/karthik/pdf/42\ PYTHON\ BOOKS\ +\ EXAMPLES/BOOKS/LPTHW.pdf &'
 alias dot='cd /home/harmony/Desktop/Karthik/karthik/dotfiles/'
 alias st='python ~/Desktop/Karthik/karthik/DO-MY-STUFF/start-apps.py'
+alias doit='cd ~/Desktop/Karthik/karthik/DO-MY-STUFF/'
+alias ct-log='tail -f /var/log/odoo/10.0-CT/odoo-server.log'
+alias jod-log='tail -f /var/log/odoo/10.0-JOD/odoo-server.log'
+alias l='ls -al'
+alias data='/usr/bin/python ~/Desktop/Karthik/karthik/DO-MY-STUFF/fake-date.py'
 
 
 bind 'set show-all-if-ambiguous on'
