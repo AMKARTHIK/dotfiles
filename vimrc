@@ -23,7 +23,6 @@ Plugin 'powerline/powerline'
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 "========================================================================
-
 " To detect filetype, indent, plugin
 filetype plugin indent on    " required
 
@@ -76,11 +75,19 @@ set shell=/bin/bash "set normal bash as shell for vim
 set splitbelow
 "
 "Netrw conf
-let g:netrw_list_hide= '.*\.swp$,.*\.pyc'
+let g:netrw_list_hide='.*\.swp$,.*\.pyc,.*\.git,.*\.ctrlp,.*\.env,.*\.github,.*\.settings,.*\.project,.*\.pydevproject,.*\.tx,.*\.mail'
+"'\v\.(swp|pyc|env|ctrlp|project|pydevproject|*)$'
 let g:netrw_bufsettings = 'noma nomod nu nobl nowrap ro'
 "
 "for matchit
 runtime macros/matchit.vim "to run matchit for matching angle brackets
+
+"For ctrlP
+let g:ctrlp_root_markers = ['.ctrlp']
+let g:ctrlp_custom_ignore = {
+            \ 'dir':  '\v[\/](doc|tmp|node_modules)',
+            \ 'file': '\v\.(exe|so|dll|pyc)$',
+            \ }
 
 "=======================================================================================================
 "mappings
@@ -105,8 +112,6 @@ nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
 
 "ctrl-p mappings
-"This open's the MRU
-noremap <F4> :CtrlPBuffer<CR>
 
 
 "autoread
@@ -120,6 +125,10 @@ noremap <F4> :CtrlPBuffer<CR>
 let mapleader=" "
 nnoremap <leader>ev :vsplit $MYVIMRC<cr>
 nnoremap <leader>sv :source $MYVIMRC<cr>
-nnoremap <leader>s :w<cr>
-nnoremap <leader>sq :wq<cr>
+nnoremap <leader>w :w<cr>
+nnoremap <leader>wq :wq<cr>
+nnoremap <leader>q :q<cr>
+
+"This open's the MRU
+noremap <leader>r :CtrlPBuffer<CR>
 "=======================================================================================================
