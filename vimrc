@@ -75,7 +75,7 @@ set shell=/bin/bash "set normal bash as shell for vim
 set splitbelow
 "
 "Netrw conf
-let g:netrw_list_hide='.*\.swp$,.*\.pyc,.*\.git,.*\.ctrlp,.*\.env,.*\.github,.*\.settings,.*\.project,.*\.pydevproject,.*\.tx,.*\.mail'
+let g:netrw_list_hide='.*\.swp$,.*\.pyc,.*\.git,.*\.ctrlp,.*\.env,.*\.github,.*\.settings,.*\.project,.*\.pydevproject,.*\.tx,.*\.mail,.*\.venv,Pipfile*'
 "'\v\.(swp|pyc|env|ctrlp|project|pydevproject|*)$'
 let g:netrw_bufsettings = 'noma nomod nu nobl nowrap ro'
 "
@@ -132,3 +132,12 @@ nnoremap <leader>q :q<cr>
 "This open's the MRU
 noremap <leader>r :CtrlPBuffer<CR>
 "=======================================================================================================
+"
+"disable bracketed paste
+set t_BE=
+
+" enable line numbers
+let NERDTreeShowLineNumbers=1
+" make sure relative line numbers are used
+autocmd FileType nerdtree setlocal relativenumber
+
