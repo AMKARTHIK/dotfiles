@@ -81,21 +81,41 @@ alias r11='./odoo-bin -c .odoo-server.ln --workers=0'
 
 #JOD
 alias vimjod='vim /opt/odoo/10.0-JOD'
-alias ijod='sudo /etc/init.d/odoo-jod/odoo-server'
+alias ijod='sudo /etc/init.d/odoo-jod'
 alias jod='cd /opt/odoo/10.0-JOD/10.0'
 alias jod-log='tail -f /var/log/odoo/10.0-JOD/odoo-server.log'
 
 #ETS
-alias vimets='vim /opt/odoo/10.0-ETS'
+alias vimets='vim /opt/odoo/11.0-ETS'
 alias iets='sudo /etc/init.d/odoo-ets'
-alias ets='cd /opt/odoo/10.0-ETS/10.0'
-alias ets-log='tail -f /var/log/odoo/10.0-ETS/odoo-server.log'
+alias ets='cd /opt/odoo/11.0-ETS/11.0'
+alias ets-log='tail -f /var/log/odoo/11.0-ETS/odoo-server.log'
+
+#TSG
+alias vimtsg='vim /opt/odoo/11.0-TSG'
+alias itsg='sudo /etc/init.d/odoo-tsg'
+alias tsg='cd /opt/odoo/11.0-TSG/11.0'
+alias tsg-log='tail -f /var/log/odoo/11.0-TSG/odoo-server.log'
 
 #CT
 alias ct10='cd /opt/odoo/10.0-CT/10.0'
 alias ict10='sudo /etc/init.d/odoo-ct10/odoo-server'
 alias vimct10='vim /opt/odoo/10.0-CT'
 alias ct-log='tail -f /var/log/odoo/10.0-CT/odoo-server.log'
+
+#SUB 10.0
+alias sub10='cd /opt/odoo/10.0-SUB/10.0'
+alias isub10='sudo /etc/init.d/odoo-sub-server'
+alias vimsub10='vim /opt/odoo/10.0-SUB'
+alias sub10-log='tail -f /var/log/odoo/10.0-SUB/odoo-server.log'
+alias esub10='eo -data /home/harmony/workspace/10.0-SUB -showlocation &'
+
+#LS 10.0
+alias ls10='cd /opt/odoo/10.0-LS/10.0'
+alias ils10='sudo /etc/init.d/odoo-ls'
+alias vimls10='vim /opt/odoo/10.0-LS'
+alias ls10-log='tail -f /var/log/odoo/10.0-LS/odoo-server.log'
+alias els10='eo -data /home/harmony/workspace/LS -showlocation &'
 
 #TR
 alias etr='en -data /home/harmony/workspace/TR -showlocation &'
@@ -109,7 +129,7 @@ alias vimtr9='vim /opt/odoo/9.0-TR'
 
 #SOD
 alias sod10='cd /opt/odoo/10.0-SOD/10.0'
-alias isod10='sudo /etc/init.d/odoo-sod10/odoo-server'
+alias isod10='sudo /etc/init.d/odoo-sod10'
 alias sod9='cd /opt/odoo/9.0-SOD/9.0'
 alias vimsod9='vim /opt/odoo/9.0-SOD'
 alias vimsod10='vim /opt/odoo/10.0-SOD'

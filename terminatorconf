@@ -1,0 +1,176 @@
+[global_config]
+  dbus = False
+  enabled_plugins = CustomCommandsMenu, TerminatorThemes, TerminalShot
+  smart_copy = False
+  suppress_multiple_term_dialog = True
+  title_transmit_bg_color = "#328c00"
+[keybindings]
+[layouts]
+  [[default]]
+    [[[child0]]]
+      fullscreen = False
+      last_active_term = c3937399-c3c1-4b49-a2e6-3019df3ef5ae
+      last_active_window = True
+      maximised = True
+      order = 0
+      parent = ""
+      position = 1920:25
+      size = 1920, 1028
+      title = /bin/bash
+      type = Window
+[plugins]
+  [[CustomCommandsMenu]]
+    [[[Atom CY]]]
+      command = atom /opt/odoo/7.0-CY/7.0-git /opt/odoo/7.0-CY/7.0 /opt/odoo/7.0-CY/cynmar /opt/odoo/7.0-CY/sciencefirst /opt/odoo/7.0-CY/sodexis /opt/odoo/7.0-CY/sodexismodules /opt/odoo/7.0-CY/sodexismodules-git /opt/odoo/7.0-CY/tiny_apps /home/harmony/Desktop/Karthik/karthik/Text-File
+      enabled = True
+      name = Atom CY
+      position = 15
+    [[[Atom MM]]]
+      command = atom /opt/odoo/9.0-MM/9.0 /opt/odoo/9.0-MM/9.0-Ent /opt/odoo/9.0-MM/sodexis_modules /opt/odoo/9.0-MM/sodexis_multi_repo /opt/odoo/9.0-MM/community_modules /opt/odoo/9.0-MM/mm_lafleur/mm_lafleur /opt/odoo/9.0-MM/tiny_apps/tiny_apps /home/harmony/Desktop/Karthik/karthik/Text-File  &
+      enabled = True
+      name = Atom MM
+      position = 13
+    [[[Atom SF]]]
+      command = atom /opt/odoo/7.0-SF/7.0-git /opt/odoo/7.0-SF/7.0 /opt/odoo/7.0-SF/cynmar /opt/odoo/7.0-SF/sciencefirst /opt/odoo/7.0-SF/sodexis /opt/odoo/7.0-SF/sodexismodules /opt/odoo/7.0-SF/sodexismodules-git /opt/odoo/7.0-SF/tiny_apps /home/harmony/Desktop/Karthik/karthik/Text-File
+      enabled = True
+      name = Atom SF
+      position = 14
+    [[[Atom TR]]]
+      command = atom /opt/odoo/8.0-TR/8.0 /opt/odoo/8.0-TR/sodexis_modules /opt/odoo/8.0-TR/community_modules /opt/odoo/8.0-TR/trillium/trillium /opt/odoo/8.0-TR/tiny_apps/tiny_apps /home/harmony/Desktop/Karthik/karthik/Text-File &
+      enabled = True
+      name = Atom TR
+      position = 12
+    [[[Atom Text File]]]
+      command = atom ~/Desktop/Karthik/karthik/Text-File/
+      enabled = True
+      name = Atom Text File
+      position = 11
+    [[[CY Base]]]
+      command = cd /opt/odoo/7.0-CY/7.0-git
+      enabled = True
+      name = CY Base
+      position = 9
+    [[[Eclipse CT10]]]
+      command = eo -data /home/harmony/workspace/CT10 -showlocation &
+      enabled = True
+      name = Eclipse CT10
+      position = 23
+    [[[Eclipse CY]]]
+      command = eo -data /home/harmony/workspace/CY -showlocation &
+      enabled = True
+      name = Eclipse CY
+      position = 2
+    [[[Eclipse ETS]]]
+      command = eo -data /home/harmony/workspace/ETS -showlocation &
+      enabled = True
+      name = Eclipse ETS
+      position = 26
+    [[[Eclipse GIT]]]
+      command = eo -data /home/harmony/workspace/GIT -showlocation &
+      enabled = True
+      name = Eclipse GIT
+      position = 28
+    [[[Eclipse JOD]]]
+      command = eo -data /home/harmony/workspace/JOD -showlocation &
+      enabled = True
+      name = Eclipse JOD
+      position = 24
+    [[[Eclipse MM]]]
+      command = en -data /home/harmony/workspace/MM -showlocation &
+      enabled = True
+      name = Eclipse MM
+      position = 1
+    [[[Eclipse SF]]]
+      command = eo -data /home/harmony/workspace/SF -showlocation &
+      enabled = True
+      name = Eclipse SF
+      position = 3
+    [[[Eclipse SOD 10]]]
+      command = eo -data /home/harmony/workspace/SOD10 -showlocation &
+      enabled = True
+      name = Eclipse SOD 10
+      position = 21
+    [[[Eclipse SOD8]]]
+      command = eo -data /home/harmony/workspace/SOD8 -showlocation &
+      enabled = True
+      name = Eclipse SOD8
+      position = 5
+    [[[Eclipse SOD9]]]
+      command = eo -data /home/harmony/workspace/SOD9 -showlocation &
+      enabled = True
+      name = Eclipse SOD9
+      position = 6
+    [[[Eclipse SOH]]]
+      command = eo -data /home/harmony/workspace/SOH -showlocation &
+      enabled = True
+      name = Eclipse SOH
+      position = 4
+    [[[Eclipse SOH10]]]
+      command = eo -data /home/harmony/workspace/SOH10 -showlocation &
+      enabled = True
+      name = Eclipse SOH10
+      position = 20
+    [[[Eclipse SUB]]]
+      command = eo -data /home/harmony/workspace/SUB -showlocation &
+      enabled = True
+      name = Eclipse SUB
+      position = 25
+    [[[Eclipse TR]]]
+      command = eo -data /home/harmony/workspace/TR -showlocation &
+      enabled = True
+      name = Eclipse TR
+      position = 0
+    [[[Eclipse TR10]]]
+      command = eo -data /home/harmony/workspace/TR10 -showlocation &
+      enabled = True
+      name = Eclipse TR10
+      position = 22
+    [[[Eclipse TR9]]]
+      command = eo -data /home/harmony/workspace/TR9 -showlocation &
+      enabled = True
+      name = Eclipse TR9
+      position = 19
+    [[[Eclipse TSG]]]
+      command = eo -data /home/harmony/workspace/TSG -showlocation &
+      enabled = True
+      name = Eclipse TSG
+      position = 27
+    [[[MM Base]]]
+      command = cd /opt/odoo/9.0-MM/9.0
+      enabled = True
+      name = MM Base
+      position = 8
+    [[[Run Log Server]]]
+      command = log.io-server & log.io-harvester &
+      enabled = True
+      name = Run Log Server
+      position = 16
+    [[[SF Base]]]
+      command = cd /opt/odoo/7.0-SF/7.0-git
+      enabled = True
+      name = SF Base
+      position = 10
+    [[[SOH BASE]]]
+      command = cd /opt/odoo/9.0-SOH/9.0
+      enabled = True
+      name = SOH BASE
+      position = 18
+    [[[TR Base]]]
+      command = cd /opt/odoo/8.0-TR/8.0
+      enabled = True
+      name = TR Base
+      position = 7
+    [[[phash]]]
+      command = "UPDATE res_users set password_crypt='$pbkdf2-sha512$6$rounds=100000$EyxFfbzRHyaWlGMZ$IUYW/uctbNIahjTBZyz/.3gky.OADlFcmx5hnXPbNRghnWEMW7MI.6AvLmOJHCX0dWL6/1hooq4JF0rbfIjrL/', password='admin' where login='admin';"
+      enabled = True
+      name = phash
+      position = 17
+[profiles]
+  [[default]]
+    copy_on_selection = True
+    scrollback_infinite = True
+    scrollbar_position = hidden
+    background_color = "#161719"
+    cursor_color = "#d0d0d0"
+    foreground_color = "#c5c8c6"
+    palette = "#000000:#fd5ff1:#87c38a:#ffd7b1:#85befd:#b9b6fc:#85befd:#e0e0e0:#000000:#fd5ff1:#94fa36:#f5ffa8:#96cbfe:#b9b6fc:#85befd:#e0e0e0"

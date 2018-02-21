@@ -19,6 +19,7 @@ Plugin 'kien/ctrlp.vim'
 Plugin 'editorconfig/editorconfig-vim'
 Plugin 'Chiel92/vim-autoformat'
 Plugin 'powerline/powerline'
+Plugin 'majutsushi/tagbar'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -75,7 +76,7 @@ set shell=/bin/bash "set normal bash as shell for vim
 set splitbelow
 "
 "Netrw conf
-let g:netrw_list_hide='.*\.swp$,.*\.pyc,.*\.git,.*\.ctrlp,.*\.env,.*\.github,.*\.settings,.*\.project,.*\.pydevproject,.*\.tx,.*\.mail,.*\.venv,Pipfile*'
+let g:netrw_list_hide='.*\.swp$,.*\.pyc,.*\.git,.*\.ctrlp,.*\.env,.*\.github,.*\.settings,.*\.project,.*\.pydevproject,.*\.tx$,.*\.mail,.*\.venv,Pipfile*,__pycache__'
 "'\v\.(swp|pyc|env|ctrlp|project|pydevproject|*)$'
 let g:netrw_bufsettings = 'noma nomod nu nobl nowrap ro'
 "
@@ -111,12 +112,18 @@ nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
 
+
 "ctrl-p mappings
 
 
 "autoread
 :map <F7> :checktime<CR>
 :map! <F7> <C-O>:checktime<CR>
+
+"tagbar
+nnoremap <F8> :TagbarToggle<CR>
+nnoremap <F5> :Ex<CR>
+nnoremap <F6> :Vex<CR>
 
 "=======================================================================================================
 
@@ -128,6 +135,16 @@ nnoremap <leader>sv :source $MYVIMRC<cr>
 nnoremap <leader>w :w<cr>
 nnoremap <leader>wq :wq<cr>
 nnoremap <leader>q :q<cr>
+"move split window
+nnoremap <leader>l <C-W>L
+nnoremap <leader>h <C-W>H
+nnoremap <leader>k <C-W>K
+nnoremap <leader>j <C-W>J
+
+"window resizing mapping
+nnoremap <leader>e <C-W>=
+nnoremap <leader>\ <C-W>\|
+nnoremap <leader>\\ <C-W>_
 
 "This open's the MRU
 noremap <leader>r :CtrlPBuffer<CR>
@@ -136,8 +153,22 @@ noremap <leader>r :CtrlPBuffer<CR>
 "disable bracketed paste
 set t_BE=
 
-" enable line numbers
-let NERDTreeShowLineNumbers=1
-" make sure relative line numbers are used
-autocmd FileType nerdtree setlocal relativenumber
+"=========================================================================================================
+"
+"My abb
+cab jodp /opt/odoo/10.0-JOD/**/*.py
+cab jodx /opt/odoo/10.0-JOD/**/*.xml
+iab ipdb import pdb
+iab pdb pdb.set_trace()
 
+"==========================================================================================================
+"local leader
+let maplocalleader = "\\"
+
+" auto cmd group
+augroup file_type
+    autocmd!
+    autocmd FileType python nnoremap <buffer> <localleader>c I#<Esc>
+    autocmd FileType xml nnoremap <buffer> <localleader>c I<!--<Esc>A--><Esc>
+    autocmd FileType netrw :set relativenumber
+augroup END

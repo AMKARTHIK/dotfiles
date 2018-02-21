@@ -57,6 +57,7 @@ _build/
 !.mailmap
 # compiled python files
 *.py[co]
+__pycache__
 # setup.py egg_info
 *.egg-info
 # emacs backup files
@@ -85,3 +86,6 @@ install/win32/meta.py
 
 #rsa-key-odoo
 rsa-*
+
+#amkarthik.py
+amkarthik.py
