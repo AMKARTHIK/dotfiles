@@ -1,4 +1,4 @@
-"set nocompatible              " be iMproved, required
+set nocompatible              " be iMproved, required
 "filetype off                  " required
 
 "========================================================================
@@ -14,12 +14,21 @@ Plugin 'VundleVim/Vundle.vim'
 "git plugins
 Plugin 'tpope/vim-fugitive'
 Plugin 'tpope/vim-git'
+Plugin 'airblade/vim-gitgutter'
 
 Plugin 'kien/ctrlp.vim'
 Plugin 'editorconfig/editorconfig-vim'
 Plugin 'Chiel92/vim-autoformat'
 Plugin 'powerline/powerline'
 Plugin 'majutsushi/tagbar'
+Plugin 'avakhov/vim-yaml'
+"Plugin 'scrooloose/nerdcommenter'
+Plugin 'tpope/vim-commentary'
+Plugin 'easymotion/vim-easymotion'
+Plugin 'sjl/gundo.vim'
+Plugin 'tpope/vim-surround'
+Plugin 'groenewege/vim-less'
+
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -41,6 +50,12 @@ set expandtab
 "file manipulation line save close etx
 set autowrite "write the file when closing it auto save
 set autoread
+set hlsearch
+
+"command line
+set history=200
+cnoremap <C-p> <Up>
+cnoremap <C-n> <Down>
 
 "====================================================================================================
 "Edition customizations
@@ -76,7 +91,7 @@ set shell=/bin/bash "set normal bash as shell for vim
 set splitbelow
 "
 "Netrw conf
-let g:netrw_list_hide='.*\.swp$,.*\.pyc,.*\.git,.*\.ctrlp,.*\.env,.*\.github,.*\.settings,.*\.project,.*\.pydevproject,.*\.tx$,.*\.mail,.*\.venv,Pipfile*,__pycache__'
+let g:netrw_list_hide='.*\.swp$,.*\.pyc,.*\.git,.*\.ctrlp,.*\.env,.*\.github,.*\.settings,.*\.project,.*\.pydevproject,.*\.tx$,.*\.mail,.*\.venv,Pipfile*,__pycache__,.*\.autoenv'
 "'\v\.(swp|pyc|env|ctrlp|project|pydevproject|*)$'
 let g:netrw_bufsettings = 'noma nomod nu nobl nowrap ro'
 "
@@ -120,8 +135,13 @@ nnoremap <C-H> <C-W><C-H>
 :map <F7> :checktime<CR>
 :map! <F7> <C-O>:checktime<CR>
 
+"gundo
+let g:gundo_prefer_python3 = 1
+let g:gundo_right = 1
+nnoremap <C-F7> :GundoToggle<CR>
+
 "tagbar
-nnoremap <F8> :TagbarToggle<CR>
+nnoremap <C-F8> :TagbarToggle<CR>
 nnoremap <F5> :Ex<CR>
 nnoremap <F6> :Vex<CR>
 
@@ -140,11 +160,15 @@ nnoremap <leader>l <C-W>L
 nnoremap <leader>h <C-W>H
 nnoremap <leader>k <C-W>K
 nnoremap <leader>j <C-W>J
+nnoremap <leader>t :term ++rows=10<cr>
 
 "window resizing mapping
 nnoremap <leader>e <C-W>=
 nnoremap <leader>\ <C-W>\|
 nnoremap <leader>\\ <C-W>_
+
+"hlhide
+nnoremap <C-n> :nohlsearch<CR>
 
 "This open's the MRU
 noremap <leader>r :CtrlPBuffer<CR>
@@ -168,7 +192,29 @@ let maplocalleader = "\\"
 " auto cmd group
 augroup file_type
     autocmd!
-    autocmd FileType python nnoremap <buffer> <localleader>c I#<Esc>
-    autocmd FileType xml nnoremap <buffer> <localleader>c I<!--<Esc>A--><Esc>
     autocmd FileType netrw :set relativenumber
 augroup END
+"===========================================================================================================
+"Nerdcommenter
+" Add spaces after comment delimiters by default
+let g:NERDSpaceDelims = 1
+"
+" " Use compact syntax for prettified multi-line comments
+let g:NERDCompactSexyComs = 1
+"
+" " Align line-wise comment delimiters flush left instead of following code
+" indentation
+let g:NERDDefaultAlign = 'left'
+"
+" " Set a language to use its alternate delimiters by default
+let g:NERDAltDelims_java = 1
+"
+" " Add your own custom formats or override the defaults
+let g:NERDCustomDelimiters = { 'c': { 'left': '/**','right': '*/' } }
+"
+" " Allow commenting and inverting empty lines (useful when commenting a
+" region)
+let g:NERDCommentEmptyLines = 1
+"
+" " Enable trimming of trailing whitespace when uncommenting
+let g:NERDTrimTrailingWhitespace = 1

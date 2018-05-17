@@ -87,5 +87,8 @@ install/win32/meta.py
 #rsa-key-odoo
 rsa-*
 
-#amkarthik.py
-amkarthik.py
+#autoenv
+.env
+.autoenv
+.autoenv.ignore
+.local

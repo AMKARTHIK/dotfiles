@@ -1,0 +1,28 @@
+"my customizations
+
+"syntax and indentation related
+set autoindent " copy indent from the current line to new line
+set sw=4
+set tabstop=4
+set smartindent " automatically insert one extra level indentation in some cases.
+set expandtab
+"set textwidth=79
+
+"file manipulation line save close etx
+set hlsearch
+
+set number
+
+
+"make kj as Esc and disable Esc
+inoremap kj <Esc>
+inoremap <Esc> <NOP>
+
+"split line
+map K i<Enter>kj
+
+"leader and its mapping
+
+"hlhide
+nnoremap <C-n> :nohlsearch<CR>
+
