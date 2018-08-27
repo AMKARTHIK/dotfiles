@@ -62,11 +62,14 @@ alias gd='git difftool --dir-diff'
 #bash utils
 alias eb='vim ~/.bashrc'
 alias sb='source ~/.bashrc'
-alias l='ls -ahl'
+# force_color_prompt=yes
+alias l='ls -ahl --color'
+# LS_COLORS='di=1:fi=0:ln=1;31:pi=5:so=5:bd=5:cd=5:or=31:mi=0:ex=1;35:*.rpm=90'
+# export LS_COLORS
 
 #Custom alias
 alias js='cd /opt/JS'
-alias lpth='evince ~/Desktop/Karthik/karthik/pdf/42\ PYTHON\ BOOKS\ +\ EXAMPLES/BOOKS/LPTHW.pdf &'
+alias lpth='xreader ~/Desktop/Karthik/karthik/pdf/42\ PYTHON\ BOOKS\ +\ EXAMPLES/BOOKS/LPTHW.pdf &'
 alias dot='cd /home/harmony/Desktop/Karthik/karthik/dotfiles/'
 alias st='python ~/Desktop/Karthik/karthik/DO-MY-STUFF/start-apps.py'
 alias doit='cd ~/Desktop/Karthik/karthik/DO-MY-STUFF/'
@@ -79,7 +82,9 @@ alias eco='vim odoo-server.ln'
 alias r7='./openerp-server -c openerp-server.ln --workers=0'
 alias r9='./odoo.py -c odoo-server.ln --workers=0'
 alias r10='./odoo-bin -c odoo-server.ln --workers=0'
+alias r10-lg='./odoo-bin -c odoo-server.ln --workers=0 --logfile ./.server.log'
 alias r11='./odoo-bin -c .odoo-server.ln --workers=0'
+alias r11-lg='./odoo-bin -c .odoo-server.ln --workers=0 --logfile ./.server.log'
 
 #JOD
 alias vimjod='vim /opt/odoo/10.0-JOD'
@@ -94,6 +99,20 @@ alias iets='sudo /etc/init.d/odoo-ets'
 alias ets='cd /opt/odoo/11.0-ETS/11.0'
 alias ets-log='tail -f /var/log/odoo/11.0-ETS/odoo-server.log'
 alias eoets='eo -data /home/harmony/workspace/ETS -showlocation &'
+
+#LAS
+alias vimlas='vim /opt/odoo/11.0-LAS'
+alias ilas='sudo /etc/init.d/odoo-las'
+alias las='cd /opt/odoo/11.0-LAS/11.0'
+alias las-log='tail -f /var/log/odoo/11.0-LAS/odoo-server.log'
+alias eolas='eo -data /home/harmony/workspace/LAS -showlocation &'
+
+#SR
+alias vimsr='vim /opt/odoo/11.0-SR'
+alias isr='sudo /usr/local/bin/odoo-sr'
+alias sr='cd /opt/odoo/11.0-SR/11.0'
+alias sr-log='tail -f /var/log/odoo/11.0-SR/odoo-server.log'
+alias eosr='eo -data /home/harmony/workspace/SR -showlocation &'
 
 #SOD11
 alias vimsod11='vim /opt/odoo/11.0-SOD'
@@ -173,6 +192,8 @@ alias vimcy='vim /opt/odoo/7.0-CY'
 alias vimsf='vim /opt/odoo/7.0-SF'
 
 alias dopy='/home/harmony/Desktop/Karthik/karthik/DO-MY-STUFF/.venv/bin/python'
+
+alias gu='./git_update.ln $repolist'
 
 
 bind 'set show-all-if-ambiguous on'

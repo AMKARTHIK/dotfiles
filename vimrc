@@ -28,6 +28,7 @@ Plugin 'easymotion/vim-easymotion'
 Plugin 'sjl/gundo.vim'
 Plugin 'tpope/vim-surround'
 Plugin 'groenewege/vim-less'
+Plugin 'prettier/vim-prettier'
 
 
 " All of your Plugins must be added before the following line
@@ -50,6 +51,8 @@ set expandtab
 "file manipulation line save close etx
 set autowrite "write the file when closing it auto save
 set autoread
+
+set incsearch
 set hlsearch
 
 "command line
@@ -141,10 +144,13 @@ let g:gundo_right = 1
 nnoremap <C-F7> :GundoToggle<CR>
 
 "tagbar
+let g:tagbar_left=1
 nnoremap <C-F8> :TagbarToggle<CR>
 nnoremap <F5> :Ex<CR>
 nnoremap <F6> :Vex<CR>
 
+set listchars=eol:$,nbsp:_,tab:>-,trail:~,extends:>,precedes:<
+nnoremap <C-F5> :set list!<CR>
 "=======================================================================================================
 
 "leader and its mapping
@@ -218,3 +224,11 @@ let g:NERDCommentEmptyLines = 1
 "
 " " Enable trimming of trailing whitespace when uncommenting
 let g:NERDTrimTrailingWhitespace = 1
+
+"editor config
+let g:EditorConfig_exclude_patterns = ['fugitive://.*', 'scp://.*']
+let g:EditorConfig_max_line_indicator="line"
+
+"prettier
+let g:prettier#autoformat = 0
+let g:prettier#config#tab_width = 4

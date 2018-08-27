@@ -1,0 +1,12 @@
+bind: 0.0.0.0:8080      # address and port to bind on
+allow-transfers: true   # allow log file downloads
+follow-names: true     # allow tailing of not-yet-existent files
+# relative-root: /tailon  # web app root path (default: '')
+commands: [tail, grep, awk]  # allowed commands
+tail-lines: 10          # number of lines to tail initially
+history-lines: 0          # number of lines to tail initially
+wrap-lines: false        # initial line-wrapping state
+
+files:
+  - 'local':
+    - '/var/log/odoo/*'

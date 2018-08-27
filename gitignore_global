@@ -92,3 +92,5 @@ rsa-*
 .autoenv
 .autoenv.ignore
 .local
+
+Makefile
