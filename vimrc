@@ -30,9 +30,16 @@ Plugin 'tpope/vim-surround'
 Plugin 'groenewege/vim-less'
 Plugin 'prettier/vim-prettier'
 
+"Google plugins
+Plugin 'google/vim-maktaba'
+Plugin 'google/vim-codefmt'
+Plugin 'google/vim-glaive'
+Plugin 'google/vim-searchindex'
+
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
+call glaive#Install()
 "========================================================================
 " To detect filetype, indent, plugin
 filetype plugin indent on    " required
@@ -94,7 +101,7 @@ set shell=/bin/bash "set normal bash as shell for vim
 set splitbelow
 "
 "Netrw conf
-let g:netrw_list_hide='.*\.swp$,.*\.pyc,.*\.git,.*\.ctrlp,.*\.env,.*\.github,.*\.settings,.*\.project,.*\.pydevproject,.*\.tx$,.*\.mail,.*\.venv,Pipfile*,__pycache__,.*\.autoenv'
+let g:netrw_list_hide='.*\.swp$,.*\.pyc,.*\.svn,.*\.git,.*\.ctrlp,.*\.env,.*\.github,.*\.settings,.*\.project,.*\.pydevproject,.*\.tx$,.*\.mail,.*\.venv,Pipfile*,__pycache__,.*\.autoenv'
 "'\v\.(swp|pyc|env|ctrlp|project|pydevproject|*)$'
 let g:netrw_bufsettings = 'noma nomod nu nobl nowrap ro'
 "
@@ -119,7 +126,8 @@ inoremap <Esc> <NOP>
 map K i<Enter>kj
 
 "Autoformat mappings
-noremap <F3> :Autoformat<CR>
+noremap <F3> :FormatCode<CR>
+noremap <C-F3> :Autoformat<CR>
 "auto format options for py files
 let g:formatdef_autopep8 = "'autopep8 -a -a -i'"
 let g:formatters_python = ['autopep8']
@@ -144,8 +152,11 @@ let g:gundo_right = 1
 nnoremap <C-F7> :GundoToggle<CR>
 
 "tagbar
+let g:tagbar_ctags_bin = '/opt/ctags-installed/bin/ctags'
 let g:tagbar_left=1
+let g:tagbar_show_linenumbers = -1
 nnoremap <C-F8> :TagbarToggle<CR>
+
 nnoremap <F5> :Ex<CR>
 nnoremap <F6> :Vex<CR>
 
@@ -199,6 +210,8 @@ let maplocalleader = "\\"
 augroup file_type
     autocmd!
     autocmd FileType netrw :set relativenumber
+    autocmd FileType rst :set nofoldenable
+    " autocmd FileType tagbar :set relativenumber
 augroup END
 "===========================================================================================================
 "Nerdcommenter
@@ -230,5 +243,8 @@ let g:EditorConfig_exclude_patterns = ['fugitive://.*', 'scp://.*']
 let g:EditorConfig_max_line_indicator="line"
 
 "prettier
+let g:prettier#exec_cmd_path = '/usr/local/bin/prettier'
 let g:prettier#autoformat = 0
 let g:prettier#config#tab_width = 4
+" autocmd BufWritePre,TextChanged,InsertLeave *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.graphql,*.md,*.vue PrettierAsync
+

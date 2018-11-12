@@ -8,6 +8,7 @@ source /opt/apps/autoenv/activate.sh
 export PIPENV_VENV_IN_PROJECT=1
 
 
+
 # force_color_prompt=yes
 
 # Git branch in prompt.
@@ -80,18 +81,34 @@ alias eco='vim odoo-server.ln'
 
 #odoo run
 alias r7='./openerp-server -c openerp-server.ln --workers=0'
-alias r9='./odoo.py -c odoo-server.ln --workers=0'
+alias r8='./odoo.py -c odoo-server.ln --workers=0'
 alias r10='./odoo-bin -c odoo-server.ln --workers=0'
 alias r10-lg='./odoo-bin -c odoo-server.ln --workers=0 --logfile ./.server.log'
 alias r11='./odoo-bin -c .odoo-server.ln --workers=0'
 alias r11-lg='./odoo-bin -c .odoo-server.ln --workers=0 --logfile ./.server.log'
+alias r12='./odoo-bin -c odoo-conf.ln --workers=0'
+alias r12-lg='./odoo-bin -c odoo-conf.ln --workers=0 --logfile ./.server.log'
 
 #JOD
-alias vimjod='vim /opt/odoo/10.0-JOD'
-alias ijod='sudo /etc/init.d/odoo-jod'
-alias jod='cd /opt/odoo/10.0-JOD/10.0'
-alias jod-log='tail -f /var/log/odoo/10.0-JOD/odoo-server.log'
-alias eojod='eo -data /home/harmony/workspace/JOD -showlocation &'
+#alias vimjod='vim /opt/odoo/10.0-JOD'
+#alias ijod='sudo /etc/init.d/odoo-jod'
+#alias jod='cd /opt/odoo/10.0-JOD/10.0'
+#alias jod-log='tail -f /var/log/odoo/10.0-JOD/odoo-server.log'
+#alias eojod='eo -data /home/harmony/workspace/JOD -showlocation &'
+
+#NRR
+alias vimnrr='vim /opt/odoo/12.0-NRR/src'
+alias inrr='sudo /opt/odoo/12.0-NRR/src/dev_tools/odoo-scripts/odoo-server'
+alias nrr='cd /opt/odoo/12.0-NRR/src/12.0'
+alias nrr-log='tail -f /opt/odoo/12.0-NRR/logs/odoo-server.log'
+alias eonrr='eo -data /home/harmony/workspace/NRR -showlocation &'
+
+#HEN
+alias vimhen='vim /opt/odoo/12.0-HEN'
+alias ihen='sudo /opt/odoo/12.0-HEN/dev_tools/odoo-scripts/odoo-server'
+alias hen='cd /opt/odoo/12.0-HEN/12.0'
+alias hen-log='tail -f /opt/odoo/12.0-HEN/logs/odoo-server.log'
+alias eohen='eo -data /home/harmony/workspace/HEN -showlocation &'
 
 #ETS
 alias vimets='vim /opt/odoo/11.0-ETS'
@@ -121,27 +138,6 @@ alias sod11='cd /opt/odoo/11.0-SOD/11.0'
 alias sod11-log='tail -f /var/log/odoo/11.0-SOD/odoo-server.log'
 alias eosod11='eo -data /home/harmony/workspace/SOD11 -showlocation &'
 
-#TSG
-alias vimtsg='vim /opt/odoo/11.0-TSG'
-alias itsg='sudo /etc/init.d/odoo-tsg'
-alias tsg='cd /opt/odoo/11.0-TSG/11.0'
-alias tsg-log='tail -f /var/log/odoo/11.0-TSG/odoo-server.log'
-alias eotsg='eo -data /home/harmony/workspace/TSG -showlocation &'
-
-#CT
-alias ct10='cd /opt/odoo/10.0-CT/10.0'
-alias ict10='sudo /etc/init.d/odoo-ct10/odoo-server'
-alias vimct10='vim /opt/odoo/10.0-CT'
-alias ct-log='tail -f /var/log/odoo/10.0-CT/odoo-server.log'
-alias eoct10='eo -data /home/harmony/workspace/CT10 -showlocation &'
-
-#SUB 10.0
-alias sub10='cd /opt/odoo/10.0-SUB/10.0'
-alias isub10='sudo /etc/init.d/odoo-sub-server'
-alias vimsub10='vim /opt/odoo/10.0-SUB'
-alias sub10-log='tail -f /var/log/odoo/10.0-SUB/odoo-server.log'
-alias eosub10='eo -data /home/harmony/workspace/10.0-SUB -showlocation &'
-
 #LS 10.0
 alias ls10='cd /opt/odoo/10.0-LS/10.0'
 alias ils10='sudo /etc/init.d/odoo-ls'
@@ -150,36 +146,25 @@ alias ls10-log='tail -f /var/log/odoo/10.0-LS/odoo-server.log'
 alias eols10='eo -data /home/harmony/workspace/LS -showlocation &'
 
 #TR
+alias tr8='cd /opt/odoo/8.0-TR/8.0'
+alias tr-log='tail -f /var/log/odoo/8.0-TR/odoo-server.log'
+alias vimtr='cd /opt/odoo/8.0-TR'
 alias eotr='eo -data /home/harmony/workspace/TR -showlocation &'
-alias itr='sudo /etc/init.d/odoo-trillium'
-alias itr9='sudo /etc/init.d/odoo-tr9'
-alias itr10='sudo /etc/init.d/odoo-tr10/odoo-server'
-alias tr9='cd /opt/odoo/9.0-TR/9.0'
-alias tr10='cd /opt/odoo/10.0-TR/10.0'
-alias vimtr10='vim /opt/odoo/10.0-TR'
-alias vimtr9='vim /opt/odoo/9.0-TR'
+alias itr='sudo /opt/odoo/8.0-TR/dev_tools/odoo-scripts/odoo-server'
 
 #SOD
 alias sod10='cd /opt/odoo/10.0-SOD/10.0'
+alias sod10-log='tail -f /var/log/odoo/10.0-SOD/odoo-server.log'
 alias isod10='sudo /etc/init.d/odoo-sod10'
-alias sod9='cd /opt/odoo/9.0-SOD/9.0'
-alias vimsod9='vim /opt/odoo/9.0-SOD'
 alias vimsod10='vim /opt/odoo/10.0-SOD'
 alias eosod10='eo -data /home/harmony/workspace/SOD10 -showlocation &'
 
 #SOH
 alias sohl='tail -f /var/log/odoo/10.0-SOH/odoo-server.log'
 alias eosoh='eo -data /home/harmony/workspace/SOH10 -showlocation &'
-alias vimsoh9='vim /opt/odoo/9.0-SOH'
 alias vimsoh10='vim /opt/odoo/10.0-SOH'
 alias soh10='cd /opt/odoo/10.0-SOH/10.0'
-alias soh9='cd /opt/odoo/9.0-SOH/9.0'
-alias ish='sudo /etc/init.d/odoo-soh'
 alias ish10='sudo /etc/init.d/odoo-soh10'
-
-#mm
-alias imm='sudo /etc/init.d/odoo-mmlafleur'
-alias eomm='eo -data /home/harmony/workspace/MM -showlocation &'
 
 #CYandSF
 alias eosf='eo -data /home/harmony/workspace/SF -showlocation &'
@@ -193,7 +178,6 @@ alias vimsf='vim /opt/odoo/7.0-SF'
 
 alias dopy='/home/harmony/Desktop/Karthik/karthik/DO-MY-STUFF/.venv/bin/python'
 
-alias gu='./git_update.ln $repolist'
 
 
 bind 'set show-all-if-ambiguous on'

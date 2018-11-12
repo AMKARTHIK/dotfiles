@@ -13,8 +13,17 @@ indent_size = 4
 trim_trailing_whitespace = true
 max_line_length=80
 
+[*.text]
+max_line_length=off
+
 [*.xml]
 insert_final_newline = true
+max_line_length=off
+
+[*.conf]
+max_line_length=off
+
+[*.ln]
 max_line_length=off
 
 [*.py]
