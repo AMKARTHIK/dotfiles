@@ -7,6 +7,9 @@ source /opt/apps/autoenv/activate.sh
 #pipenv
 export PIPENV_VENV_IN_PROJECT=1
 
+#"xmllint
+export XMLLINT_INDENT="    "
+
 
 
 # force_color_prompt=yes
@@ -96,12 +99,19 @@ alias r12-lg='./odoo-bin -c odoo-conf.ln --workers=0 --logfile ./.server.log'
 #alias jod-log='tail -f /var/log/odoo/10.0-JOD/odoo-server.log'
 #alias eojod='eo -data /home/harmony/workspace/JOD -showlocation &'
 
-#NRR
-alias vimnrr='vim /opt/odoo/12.0-NRR/src'
-alias inrr='sudo /opt/odoo/12.0-NRR/src/dev_tools/odoo-scripts/odoo-server'
-alias nrr='cd /opt/odoo/12.0-NRR/src/12.0'
-alias nrr-log='tail -f /opt/odoo/12.0-NRR/logs/odoo-server.log'
-alias eonrr='eo -data /home/harmony/workspace/NRR -showlocation &'
+#NCC
+alias vimncc='vim /opt/odoo/12.0-NCC/src'
+alias incc='sudo /opt/odoo/12.0-NCC/src/dev_tools/odoo-scripts/odoo-server'
+alias ncc='cd /opt/odoo/12.0-NCC/src/12.0'
+alias ncc-log='tail -f /opt/odoo/12.0-NCC/logs/odoo-server.log'
+alias eoncc='eo -data /home/harmony/workspace/NCC -showlocation &'
+
+#SOH
+alias vimsoh12='vim /opt/odoo/12.0-SOH/src'
+alias isoh12='sudo /opt/odoo/12.0-SOH/src/dev_tools/odoo-scripts/odoo-server'
+alias soh12='cd /opt/odoo/12.0-SOH/src/12.0'
+alias soh12-log='tail -f /opt/odoo/12.0-SOH/logs/odoo-server.log'
+alias eosoh12='eo -data /home/harmony/workspace/SOH12 -showlocation &'
 
 #HEN
 alias vimhen='vim /opt/odoo/12.0-HEN'
@@ -177,6 +187,11 @@ alias vimcy='vim /opt/odoo/7.0-CY'
 alias vimsf='vim /opt/odoo/7.0-SF'
 
 alias dopy='/home/harmony/Desktop/Karthik/karthik/DO-MY-STUFF/.venv/bin/python'
+
+#git script auto complete
+alias code_update='./git_update.ln'
+. /home/harmony/Desktop/Karthik/karthik/dotfiles/git_update_completion.bash
+
 
 
 

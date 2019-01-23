@@ -21,12 +21,13 @@ Plugin 'editorconfig/editorconfig-vim'
 Plugin 'Chiel92/vim-autoformat'
 Plugin 'powerline/powerline'
 Plugin 'majutsushi/tagbar'
-Plugin 'avakhov/vim-yaml'
+"Plugin 'othree/xml.vim'
+"Plugin 'avakhov/vim-yaml'
 "Plugin 'scrooloose/nerdcommenter'
 Plugin 'tpope/vim-commentary'
-Plugin 'easymotion/vim-easymotion'
-Plugin 'sjl/gundo.vim'
-Plugin 'tpope/vim-surround'
+"Plugin 'easymotion/vim-easymotion'
+"Plugin 'sjl/gundo.vim'
+"Plugin 'tpope/vim-surround'
 Plugin 'groenewege/vim-less'
 Plugin 'prettier/vim-prettier'
 
@@ -143,13 +144,13 @@ nnoremap <C-H> <C-W><C-H>
 
 
 "autoread
-:map <F7> :checktime<CR>
-:map! <F7> <C-O>:checktime<CR>
+":map <F7> :checktime<CR>
+":map! <F7> <C-O>:checktime<CR>
 
 "gundo
-let g:gundo_prefer_python3 = 1
-let g:gundo_right = 1
-nnoremap <C-F7> :GundoToggle<CR>
+"let g:gundo_prefer_python3 = 1
+"let g:gundo_right = 1
+"nnoremap <C-F7> :GundoToggle<CR>
 
 "tagbar
 let g:tagbar_ctags_bin = '/opt/ctags-installed/bin/ctags'
@@ -216,27 +217,27 @@ augroup END
 "===========================================================================================================
 "Nerdcommenter
 " Add spaces after comment delimiters by default
-let g:NERDSpaceDelims = 1
+"let g:NERDSpaceDelims = 1
 "
 " " Use compact syntax for prettified multi-line comments
-let g:NERDCompactSexyComs = 1
+"let g:NERDCompactSexyComs = 1
 "
 " " Align line-wise comment delimiters flush left instead of following code
 " indentation
-let g:NERDDefaultAlign = 'left'
+"let g:NERDDefaultAlign = 'left'
 "
 " " Set a language to use its alternate delimiters by default
-let g:NERDAltDelims_java = 1
+"let g:NERDAltDelims_java = 1
 "
 " " Add your own custom formats or override the defaults
-let g:NERDCustomDelimiters = { 'c': { 'left': '/**','right': '*/' } }
+"let g:NERDCustomDelimiters = { 'c': { 'left': '/**','right': '*/' } }
 "
 " " Allow commenting and inverting empty lines (useful when commenting a
 " region)
-let g:NERDCommentEmptyLines = 1
+"let g:NERDCommentEmptyLines = 1
 "
 " " Enable trimming of trailing whitespace when uncommenting
-let g:NERDTrimTrailingWhitespace = 1
+"let g:NERDTrimTrailingWhitespace = 1
 
 "editor config
 let g:EditorConfig_exclude_patterns = ['fugitive://.*', 'scp://.*']
