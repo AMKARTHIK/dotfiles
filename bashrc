@@ -10,7 +10,8 @@ export PIPENV_VENV_IN_PROJECT=1
 #"xmllint
 export XMLLINT_INDENT="    "
 
-
+#git_update
+. /home/harmony/Desktop/Karthik/karthik/dotfiles/.local/git_update.bash
 
 # force_color_prompt=yes
 
@@ -187,11 +188,17 @@ alias vimcy='vim /opt/odoo/7.0-CY'
 alias vimsf='vim /opt/odoo/7.0-SF'
 
 alias dopy='/home/harmony/Desktop/Karthik/karthik/DO-MY-STUFF/.venv/bin/python'
+alias cust='cd /home/harmony/Desktop/customers'
+alias auto='cd /home/harmony/Desktop/Karthik/karthik/autobot'
 
 #git script auto complete
 alias code_update='./git_update.ln'
 . /home/harmony/Desktop/Karthik/karthik/dotfiles/git_update_completion.bash
 
+#new customer aliases
+. /opt/odoo/alias_conf/ls_12.0_alias.sh
+. /opt/odoo/alias_conf/fm_11.0_alias.sh
+. /opt/odoo/alias_conf/sod_12.0_alias.sh
 
 
 

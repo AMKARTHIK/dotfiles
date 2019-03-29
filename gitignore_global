@@ -95,3 +95,8 @@ rsa-*
 .local
 
 Makefile
+Pipfile
+Pipfile.lock
+
+#lasiesta custom mail template ignores
+#

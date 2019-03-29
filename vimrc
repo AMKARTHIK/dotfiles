@@ -16,6 +16,11 @@ Plugin 'tpope/vim-fugitive'
 Plugin 'tpope/vim-git'
 Plugin 'airblade/vim-gitgutter'
 
+"colors
+Plugin 'sheerun/vim-polyglot'
+Plugin 'joshdick/onedark.vim'
+
+
 Plugin 'kien/ctrlp.vim'
 Plugin 'editorconfig/editorconfig-vim'
 Plugin 'Chiel92/vim-autoformat'
@@ -37,12 +42,27 @@ Plugin 'google/vim-codefmt'
 Plugin 'google/vim-glaive'
 Plugin 'google/vim-searchindex'
 
+"fzf
+Plugin 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plugin 'junegunn/fzf.vim'
+
+Plugin 'chrisbra/csv.vim'
+Plugin 'nathanaelkane/vim-indent-guides'
+
+"nert tree
+"Plugin 'scrooloose/nerdtree'
+"Plugin 'Xuyuanp/nerdtree-git-plugin'
+
+"whitespace
+Plugin 'ntpeters/vim-better-whitespace'
+
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 call glaive#Install()
 "========================================================================
 " To detect filetype, indent, plugin
+"filetype plugin on
 filetype plugin indent on    " required
 
 "my customizations
@@ -105,6 +125,10 @@ set splitbelow
 let g:netrw_list_hide='.*\.swp$,.*\.pyc,.*\.svn,.*\.git,.*\.ctrlp,.*\.env,.*\.github,.*\.settings,.*\.project,.*\.pydevproject,.*\.tx$,.*\.mail,.*\.venv,Pipfile*,__pycache__,.*\.autoenv'
 "'\v\.(swp|pyc|env|ctrlp|project|pydevproject|*)$'
 let g:netrw_bufsettings = 'noma nomod nu nobl nowrap ro'
+
+let g:netrw_banner = 0
+"let g:netrw_liststyle = 3
+
 "
 "for matchit
 runtime macros/matchit.vim "to run matchit for matching angle brackets
@@ -115,6 +139,10 @@ let g:ctrlp_custom_ignore = {
             \ 'dir':  '\v[\/](doc|tmp|node_modules)',
             \ 'file': '\v\.(exe|so|dll|pyc)$',
             \ }
+
+let g:csv_delim=','
+let g:csv_nl = 1
+let g:csv_str = {'deleim':""}
 
 "=======================================================================================================
 "mappings
@@ -156,13 +184,18 @@ nnoremap <C-H> <C-W><C-H>
 let g:tagbar_ctags_bin = '/opt/ctags-installed/bin/ctags'
 let g:tagbar_left=1
 let g:tagbar_show_linenumbers = -1
+
 nnoremap <C-F8> :TagbarToggle<CR>
 
-nnoremap <F5> :Ex<CR>
-nnoremap <F6> :Vex<CR>
+" function VertProjectFiles()
+"     :Vex
+"     :ProjectFiles
+" endfunction
 
-set listchars=eol:$,nbsp:_,tab:>-,trail:~,extends:>,precedes:<
-nnoremap <C-F5> :set list!<CR>
+
+" set listchars=eol:$,nbsp:_,tab:>-,trail:~,extends:>,precedes:<
+" nnoremap <C-F5> :set list!<CR>
+nnoremap <F4> :ToggleWhitespace<CR>
 "=======================================================================================================
 
 "leader and its mapping
@@ -211,6 +244,7 @@ let maplocalleader = "\\"
 augroup file_type
     autocmd!
     autocmd FileType netrw :set relativenumber
+    autocmd FileType nerdtree setlocal relativenumber
     autocmd FileType rst :set nofoldenable
     " autocmd FileType tagbar :set relativenumber
 augroup END
@@ -249,3 +283,42 @@ let g:prettier#autoformat = 0
 let g:prettier#config#tab_width = 4
 " autocmd BufWritePre,TextChanged,InsertLeave *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.graphql,*.md,*.vue PrettierAsync
 
+"=======================================================
+let g:indent_guides_guide_size = 1
+noremap <C-F7> :IndentGuidesToggle<CR>
+
+
+"==========================================
+" my custom vim functions
+
+function! s:find_customer_path()
+    let l:command = 'cust-path -p ' . expand("%")
+    return system(command)[:-2]
+endfunction
+
+function! s:find_modules_path()
+    let l:command = 'cust-path -m -p ' . expand("%")
+    return system(command)[:-2]
+endfunction
+
+command! ProjectFiles execute 'Files' s:find_customer_path()
+noremap <C-F6> :ProjectFiles<CR>
+
+command! ModuleFiles execute 'Files' s:find_modules_path()
+noremap <F7> :ModuleFiles<CR>
+
+nnoremap <F6> :Vex<CR>
+
+"fzf mappings
+
+"=====================
+"
+"nerdtree conf
+
+nnoremap <silent> <F5> :Ex<CR>
+"let NERDTreeQuitOnOpen = 1
+"let NERDTreeAutoDeleteBuffer = 1
+"let NERDTreeMinimalUI = 1
+"let NERDTreeDirArrows = 1
+"let NERDTreeShowLineNumbers=1
+let g:polyglot_disabled = ['graphql']
