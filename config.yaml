@@ -9,4 +9,4 @@ wrap-lines: false        # initial line-wrapping state
 
 files:
   - 'local':
-    - '/var/log/odoo/*'
+    - '/opt/odoo/12.0-LS/logs/odoo-server.log'

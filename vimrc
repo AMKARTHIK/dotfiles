@@ -15,6 +15,7 @@ Plugin 'VundleVim/Vundle.vim'
 Plugin 'tpope/vim-fugitive'
 Plugin 'tpope/vim-git'
 Plugin 'airblade/vim-gitgutter'
+Plugin 'jreybert/vimagit'
 
 "colors
 Plugin 'sheerun/vim-polyglot'
@@ -222,7 +223,8 @@ nnoremap <leader>\\ <C-W>_
 nnoremap <C-n> :nohlsearch<CR>
 
 "This open's the MRU
-noremap <leader>r :CtrlPBuffer<CR>
+" noremap <leader>r :CtrlPBuffer<CR>
+noremap <leader>r :Buffers<CR>
 "=======================================================================================================
 "
 "disable bracketed paste
@@ -234,7 +236,7 @@ set t_BE=
 cab jodp /opt/odoo/10.0-JOD/**/*.py
 cab jodx /opt/odoo/10.0-JOD/**/*.xml
 iab ipdb import pdb
-iab pdb pdb.set_trace()
+iab pdb. pdb.set_trace()
 
 "==========================================================================================================
 "local leader
@@ -322,3 +324,17 @@ nnoremap <silent> <F5> :Ex<CR>
 "let NERDTreeDirArrows = 1
 "let NERDTreeShowLineNumbers=1
 let g:polyglot_disabled = ['graphql']
+
+"python with virtualenv support
+
+py3 << EOF
+import os
+import sys
+if 'VIRTUAL_ENV' in os.environ:
+    project_base_dir = os.environ['VIRTUAL_ENV']
+    activate_this = os.path.join(project_base_dir, 'bin/activate_this.py')
+    exec(open(activate_this).read(), dict(__file__=activate_this))
+EOF
+
+
+"testing system clipboard

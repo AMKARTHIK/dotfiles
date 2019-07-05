@@ -3,4 +3,4 @@ complete -W "cynmar_repolist extractiontek_repolist fabricmate_repolist
 free_food_alert_repolist hennepen_repolist lab_society_repolist
 lasiesta_repolist nccrc_repolist sciencefirst_repolist sodexis_repolist
 sohre_repolist spencer_repolist sport32_repolist trillium_repolist
-trinity_repolist" code_update ./git_update.sh
+trinity_repolist cleancarbonconversion_repolist kiosk_repolist" code_update ./git_update.sh
