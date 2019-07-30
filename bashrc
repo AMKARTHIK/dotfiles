@@ -4,8 +4,7 @@ export AUTOENV_ASSUME_YES=1
 export AUTOENV_ENABLE_LEAVE=1
 export AUTOENV_ENV_FILENAME=".autoenv"
 export AUTOENV_ENV_LEAVE_FILENAME=".autoleave"
-export LD_LIBRARY_PATH=/opt/apps/qute/openssl/openssl-1.0.0
-
+# export LD_LIBRARY_PATH=/usr/lib/x86_64-linux-gnu
 source /opt/apps/autoenv/activate.sh
 
 #pipenv
@@ -25,6 +24,7 @@ function stm() {
 
 #GIT
 alias gd='git difftool --dir-diff'
+alias gdc='git difftool --dir-diff --cached'
 
 #bash utils
 alias eb='vim ~/.bashrc'
