@@ -155,9 +155,6 @@ inoremap <Esc> <NOP>
 "split line
 map K i<Enter>kj
 
-"Autoformat mappings
-noremap <F3> :FormatCode<CR>
-noremap <C-F3> :Autoformat<CR>
 "auto format options for py files
 let g:formatdef_autopep8 = "'autopep8 -a -a -i'"
 let g:formatters_python = ['autopep8']
@@ -186,7 +183,6 @@ let g:tagbar_ctags_bin = '/opt/ctags-installed/bin/ctags'
 let g:tagbar_left=1
 let g:tagbar_show_linenumbers = -1
 
-nnoremap <C-F8> :TagbarToggle<CR>
 
 " function VertProjectFiles()
 "     :Vex
@@ -194,9 +190,8 @@ nnoremap <C-F8> :TagbarToggle<CR>
 " endfunction
 
 
-" set listchars=eol:$,nbsp:_,tab:>-,trail:~,extends:>,precedes:<
-" nnoremap <C-F5> :set list!<CR>
-nnoremap <F4> :ToggleWhitespace<CR>
+"indent guidelines
+let g:indent_guides_guide_size = 1
 "=======================================================================================================
 
 "leader and its mapping
@@ -286,8 +281,6 @@ let g:prettier#config#tab_width = 4
 " autocmd BufWritePre,TextChanged,InsertLeave *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.graphql,*.md,*.vue PrettierAsync
 
 "=======================================================
-let g:indent_guides_guide_size = 1
-noremap <C-F7> :IndentGuidesToggle<CR>
 
 
 "==========================================
@@ -304,12 +297,9 @@ function! s:find_modules_path()
 endfunction
 
 command! ProjectFiles execute 'Files' s:find_customer_path()
-noremap <C-F6> :ProjectFiles<CR>
-
 command! ModuleFiles execute 'Files' s:find_modules_path()
-noremap <F7> :ModuleFiles<CR>
 
-nnoremap <F6> :Vex<CR>
+
 
 "fzf mappings
 
@@ -317,14 +307,21 @@ nnoremap <F6> :Vex<CR>
 "
 "nerdtree conf
 
+nnoremap <silent> <F3> :FormatCode<CR>
+nnoremap <silent> <F4> :Autoformat<CR>
 nnoremap <silent> <F5> :Ex<CR>
-"let NERDTreeQuitOnOpen = 1
-"let NERDTreeAutoDeleteBuffer = 1
-"let NERDTreeMinimalUI = 1
-"let NERDTreeDirArrows = 1
-"let NERDTreeShowLineNumbers=1
+nnoremap <silent> <C-F5> :Vex<CR>
+nnoremap <silent> <F6> :ModuleFiles<CR>
+nnoremap <silent> <C-F6> :ProjectFiles<CR>
+nnoremap <silent> <F7> :IndentGuidesToggle<CR>
+nnoremap <silent> <C-F7> :ToggleWhitespace<CR>
+nnoremap <silent> <F8> :TagbarToggle<CR>
+
+
+"polyglot
 let g:polyglot_disabled = ['graphql']
 
+"
 "python with virtualenv support
 
 py3 << EOF
