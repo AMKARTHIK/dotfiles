@@ -13,7 +13,7 @@ indent_size = 4
 trim_trailing_whitespace = true
 max_line_length=80
 
-[*.text]
+[*.txt]
 max_line_length=off
 
 [*.xml]

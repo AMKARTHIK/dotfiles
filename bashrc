@@ -33,6 +33,10 @@ alias sb='source ~/.bashrc'
 # force_color_prompt=yes
 alias l='ls -ahl --color'
 
+#fzf mappings
+# fd --type f | fzf
+export FZF_DEFAULT_COMMAND='fd --type f'
+
 
 #Custom alias
 alias js='cd /opt/JS'
@@ -48,6 +52,7 @@ alias auto='cd /home/harmony/Desktop/Karthik/karthik/autobot/autobot/autobot'
 alias ss='/home/harmony/Desktop/vlc-screen-share/vlc-hangouts'
 alias ff='/home/harmony/Desktop/vlc-screen-share/fakecamera'
 alias tor='cd /home/harmony/Desktop/Karthik/karthik/tor-browser_en-US && ./start-tor-browser.desktop'
+alias novim='vim -u /home/harmony/.vim/essentials.vim'
 
 bind 'set show-all-if-ambiguous on'
 bind 'TAB:menu-complete'
@@ -60,6 +65,8 @@ eval "$(register-python-argcomplete ro)" # run odoo
 eval "$(register-python-argcomplete lg)" # see log
 eval "$(register-python-argcomplete ec)" # edit odoo conf
 eval "$(register-python-argcomplete cu)" # git update
+eval "$(register-python-argcomplete aa)" # test bot
+eval "$(register-python-argcomplete scaff)" # test bot
 eval "$(register-python-argcomplete @)" # git update
 
 export TERM="xterm-256color"
@@ -73,3 +80,9 @@ if [ "$TERM" != "linux" ]; then
     PROMPT_COMMAND="_update_ps1; $PROMPT_COMMAND"
 fi
 export PATH=$PATH:/home/harmony/.nexustools
+
+export COMPOSE_IMPERSONATION='1000:1000'
+
+export COMPOSE_IMPERSONATION='1000:1000'
+
+export COMPOSE_IMPERSONATION='1000:1000'
