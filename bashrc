@@ -4,6 +4,13 @@ export AUTOENV_ASSUME_YES=1
 export AUTOENV_ENABLE_LEAVE=1
 export AUTOENV_ENV_FILENAME=".autoenv"
 export AUTOENV_ENV_LEAVE_FILENAME=".autoleave"
+
+# export WDB_NO_BROWSER_AUTO_OPEN=True
+# export WDB_SOCKET_SERVER=127.0.0.1
+# export WDB_SOCKET_PORT=19840
+# export WDB_WEB_SERVER=127.0.0.1
+# export WDB_WEB_PORT=1984
+# # export WDB_NO_BROWSER_AUTO_OPEN=True
 # export LD_LIBRARY_PATH=/usr/lib/x86_64-linux-gnu
 source /opt/apps/autoenv/activate.sh
 
@@ -58,6 +65,7 @@ bind 'set show-all-if-ambiguous on'
 bind 'TAB:menu-complete'
 
 #"python script completions
+. /etc/bash_completion.d/python-argcomplete.sh
 eval "$(register-python-argcomplete gt)" # go to customer
 eval "$(register-python-argcomplete cv)" # customer vim
 eval "$(register-python-argcomplete eo)" # open eclipse
@@ -65,9 +73,8 @@ eval "$(register-python-argcomplete ro)" # run odoo
 eval "$(register-python-argcomplete lg)" # see log
 eval "$(register-python-argcomplete ec)" # edit odoo conf
 eval "$(register-python-argcomplete cu)" # git update
-eval "$(register-python-argcomplete aa)" # test bot
+eval "$(register-python-argcomplete @)" # autobot
 eval "$(register-python-argcomplete scaff)" # test bot
-eval "$(register-python-argcomplete @)" # git update
 
 export TERM="xterm-256color"
 # Powerline
@@ -80,9 +87,10 @@ if [ "$TERM" != "linux" ]; then
     PROMPT_COMMAND="_update_ps1; $PROMPT_COMMAND"
 fi
 export PATH=$PATH:/home/harmony/.nexustools
+#:/opt/my_odoo_helpers/sodexis_tools/scripts
+export PATH=$PATH:/home/harmony/Desktop/Karthik/karthik/autobot/autobot/autobot/bin
 
 export COMPOSE_IMPERSONATION='1000:1000'
 
-export COMPOSE_IMPERSONATION='1000:1000'
-
-export COMPOSE_IMPERSONATION='1000:1000'
+#flask related
+# export FLASK_ENV=development

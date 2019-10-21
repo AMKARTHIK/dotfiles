@@ -43,6 +43,9 @@ Plugin 'google/vim-codefmt'
 Plugin 'google/vim-glaive'
 Plugin 'google/vim-searchindex'
 
+"scratchpad
+Plugin 'Konfekt/vim-scratchpad'
+
 "fzf
 Plugin 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plugin 'junegunn/fzf.vim'
@@ -57,6 +60,14 @@ Plugin 'nathanaelkane/vim-indent-guides'
 "whitespace
 Plugin 'ntpeters/vim-better-whitespace'
 
+" markdown
+Plugin 'tpope/vim-markdown'
+
+" gui related
+Plugin 'junegunn/limelight.vim'
+
+"async run
+Plugin 'skywind3000/asyncrun.vim'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -230,8 +241,6 @@ set t_BE=
 "My abb
 cab jodp /opt/odoo/10.0-JOD/**/*.py
 cab jodx /opt/odoo/10.0-JOD/**/*.xml
-iab ipdb import pdb
-iab pdb. pdb.set_trace()
 
 "==========================================================================================================
 "local leader
@@ -279,6 +288,8 @@ let g:prettier#exec_cmd_path = '/usr/local/bin/prettier'
 let g:prettier#autoformat = 0
 let g:prettier#config#tab_width = 4
 " autocmd BufWritePre,TextChanged,InsertLeave *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.graphql,*.md,*.vue PrettierAsync
+" scratchPad
+let g:scratchpad_path = '/home/harmony/Desktop/customers/.scratchpads'
 
 "=======================================================
 
@@ -316,6 +327,7 @@ nnoremap <silent> <C-F6> :ProjectFiles<CR>
 nnoremap <silent> <F7> :IndentGuidesToggle<CR>
 nnoremap <silent> <C-F7> :ToggleWhitespace<CR>
 nnoremap <silent> <F8> :TagbarToggle<CR>
+nnoremap <silent> <C-F8> :AsyncRun octodown %<CR>
 
 
 "polyglot
@@ -335,3 +347,10 @@ EOF
 
 
 "testing system clipboard
+"
+
+"markdown
+
+let g:markdown_fenced_languages = ['html', 'python', 'bash=sh', 'xml', 'js', 'scss', 'css', 'less']
+let g:markdown_minlines = 100
+" autocmd FileType markdown :AsyncRun octodown %
