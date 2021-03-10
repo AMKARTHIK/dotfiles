@@ -22,7 +22,7 @@ Plugin 'sheerun/vim-polyglot'
 Plugin 'joshdick/onedark.vim'
 
 
-Plugin 'kien/ctrlp.vim'
+" Plugin 'kien/ctrlp.vim'
 Plugin 'editorconfig/editorconfig-vim'
 Plugin 'Chiel92/vim-autoformat'
 Plugin 'powerline/powerline'
@@ -38,7 +38,7 @@ Plugin 'tpope/vim-commentary'
 "Plugin 'sjl/gundo.vim'
 "Plugin 'tpope/vim-surround'
 Plugin 'groenewege/vim-less'
-Plugin 'prettier/vim-prettier'
+" Plugin 'prettier/vim-prettier'
 
 "Google plugins
 Plugin 'google/vim-maktaba'
@@ -90,9 +90,11 @@ syntax on "For syntax hilight
 set autoindent " copy indent from the current line to new line
 set sw=4
 set tabstop=4
+set softtabstop=4
 set smartindent " automatically insert one extra level indentation in some cases.
 set expandtab
-"set textwidth=79
+set smarttab
+" set textwidth=79
 
 "file manipulation line save close etx
 set autowrite "write the file when closing it auto save
@@ -257,8 +259,8 @@ set t_BE=
 "=========================================================================================================
 "
 "My abb
-cab jodp /opt/odoo/10.0-JOD/**/*.py
-cab jodx /opt/odoo/10.0-JOD/**/*.xml
+"cab jodp /opt/odoo/10.0-JOD/**/*.py
+"cab jodx /opt/odoo/10.0-JOD/**/*.xml
 
 "==========================================================================================================
 "local leader
@@ -302,8 +304,8 @@ let g:EditorConfig_exclude_patterns = ['fugitive://.*', 'scp://.*']
 let g:EditorConfig_max_line_indicator="line"
 
 "prettier
-let g:prettier#exec_cmd_path = '/usr/local/bin/prettier'
-let g:prettier#autoformat = 0
+" let g:prettier#exec_cmd_path = '/usr/local/bin/prettier'
+" let g:prettier#autoformat = 0
 " let g:prettier#config#tab_width = 4
 " autocmd BufWritePre,TextChanged,InsertLeave *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.graphql,*.md,*.vue PrettierAsync
 
@@ -453,6 +455,20 @@ command! BD call fzf#run(fzf#wrap({
             \ 'sink*': { lines -> s:delete_buffers(lines) },
             \ 'options': '--multi --reverse --bind ctrl-a:select-all+accept'
             \ }))
+
+function! GetJumps()
+  redir => cout
+  silent jumps
+  redir END
+  return reverse(split(cout, "\n")[1:])
+endfunction
+function! GoToJump(jump)
+    let jumpnumber = split(a:jump, '\s\+')[0]
+    execute "normal " . jumpnumber . "\<c-o>"
+endfunction
+command! Jumps call fzf#run(fzf#wrap({
+        \ 'source': GetJumps(),
+        \ 'sink': function('GoToJump')}))
 
 "
 " set verbosefile=~/.log/vim/verbose.log

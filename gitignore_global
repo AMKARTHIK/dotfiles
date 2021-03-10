@@ -99,4 +99,6 @@ Pipfile
 Pipfile.lock
 
 #lasiesta custom mail template ignores
+
+tags
 #

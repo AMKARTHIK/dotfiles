@@ -1,18 +1,21 @@
 # virtual env wrapper
-source /usr/local/bin/virtualenvwrapper_lazy.sh
+. /usr/local/bin/virtualenvwrapper_lazy.sh
 export AUTOENV_ASSUME_YES=1
 export AUTOENV_ENABLE_LEAVE=1
 export AUTOENV_ENV_FILENAME=".autoenv"
 export AUTOENV_ENV_LEAVE_FILENAME=".autoleave"
 
-# export WDB_NO_BROWSER_AUTO_OPEN=True
-# export WDB_SOCKET_SERVER=127.0.0.1
-# export WDB_SOCKET_PORT=19840
-# export WDB_WEB_SERVER=127.0.0.1
-# export WDB_WEB_PORT=1984
+export WDB_NO_BROWSER_AUTO_OPEN=True
+export WDB_SOCKET_SERVER=127.0.0.1
+export WDB_SOCKET_PORT=19840
+export WDB_WEB_SERVER=127.0.0.1
+export WDB_WEB_PORT=1984
+#kwkhtmltopdf
+export KWKHTMLTOPDF_SERVER_URL='http://localhost:8080'
+export KWKHTMLTOPDF_BIN='/usr/local/bin/test/wkhtmltopdf'
 # # export WDB_NO_BROWSER_AUTO_OPEN=True
 # export LD_LIBRARY_PATH=/usr/lib/x86_64-linux-gnu
-source /opt/apps/autoenv/activate.sh
+. /opt/apps/autoenv/activate.sh
 
 #pipenv
 export PIPENV_VENV_IN_PROJECT=1
@@ -42,7 +45,7 @@ alias l='ls -ahl --color'
 
 #fzf mappings
 # fd --type f | fzf
-export FZF_DEFAULT_COMMAND='fd --type f'
+# export FZF_DEFAULT_COMMAND='fd --type f'
 
 
 #Custom alias
@@ -73,6 +76,7 @@ eval "$(register-python-argcomplete ro)" # run odoo
 eval "$(register-python-argcomplete lg)" # see log
 eval "$(register-python-argcomplete ec)" # edit odoo conf
 eval "$(register-python-argcomplete cu)" # git update
+eval "$(register-python-argcomplete co)" # code open
 eval "$(register-python-argcomplete @)" # autobot
 eval "$(register-python-argcomplete scaff)" # test bot
 
@@ -86,11 +90,28 @@ function _update_ps1() {
 if [ "$TERM" != "linux" ]; then
     PROMPT_COMMAND="_update_ps1; $PROMPT_COMMAND"
 fi
-export PATH=$PATH:/home/harmony/.nexustools
-#:/opt/my_odoo_helpers/sodexis_tools/scripts
+export PATH=$PATH:/home/harmony/.nexustools#:/opt/my_odoo_helpers/sodexis_tools/scripts
+# :/home/harmony/Desktop/Karthik/karthik/DO-MY-STUFF/bin
 export PATH=$PATH:/home/harmony/Desktop/Karthik/karthik/autobot/autobot/autobot/bin
 
 export COMPOSE_IMPERSONATION='1000:1000'
 
 #flask related
 # export FLASK_ENV=development
+
+#for goole chromium
+# export GOOGLE_API_KEY="AIzaSyBuU7RyCN-8sKmHhyJJj_jFpReuRMAyo8g"
+# export GOOGLE_DEFAULT_CLIENT_ID="1014684264079-qbmnivfka6tdoeketu43cu17s64dsh48.apps.googleusercontent.com"
+# export GOOGLE_DEFAULT_CLIENT_SECRET="XdcUP-9QUfeXDFnUmBdqxrH-"
+# export GOOGLE_API_KEY="AIzaSyCkfPOPZXDKNn8hhgu3JrA62wIgC93d44k"
+# export GOOGLE_DEFAULT_CLIENT_ID="811574891467.apps.googleusercontent.com"
+# export GOOGLE_DEFAULT_CLIENT_SECRET="kdloedMFGdGla2P1zacGjAQh"
+
+alias tt='python /usr/share/teatime/teatime.py &'
+alias ag='ag --path-to-ignore /home/harmony/.ignore'
+export FZF_DEFAULT_COMMAND='ag -g ""'
+
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash
+. /usr/share/bash-completion/bash_completion
+. /usr/share/bash-completion/completions/git
+
